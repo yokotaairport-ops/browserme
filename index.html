@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 如果你有之前的 style.css，取消下面这行的注释并确保文件在同一目录 -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>BrowserMe - 轻松浏览</title>
+    <style>
+        /* 内联样式，如果你使用外部 CSS，请删除这部分 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #ededed;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+        /* 微信风格导航栏 */
+        .navbar {
+            background-color: #07c160; /* 微信绿，但你可以改为蓝色 #007AFF */
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        /* 主题蓝色覆盖 */
+        .btn, .download-tip {
+            background-color: #007AFF !important; /* 苹果/微信蓝色 */
+        }
+        .btn:hover {
+            background-color: #0062cc !important;
+        }
+        /* App 介绍卡片 */
+        .app-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        .app-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #007AFF;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        /* 下载按钮样式 */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #007AFF;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        /* 下载提示条 */
+        .download-tip {
+            background-color: #007AFF;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+            display: none; /* 默认隐藏，通过 JS 控制显示 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <div class="navbar">
+        BrowserMe
+    </div>
+
+    <div class="container">
+        <!-- App 介绍 -->
+        <div class="app-card">
+            <div class="app-icon">B</div>
+            <h2>BrowserMe</h2>
+            <p style="color: #666; margin: 10px 0;">一款轻量级的浏览器工具，即用即走，免登录收发。</p>
+            <ul style="list-style: none; padding: 0; color: #666; margin: 15px 0;">
+                <li>✅ 免登收发，即用即走</li>
+                <li>✅ 上传下载不限速</li>
+                <li>✅ 分享文件免登录提取</li>
+            </ul>
+            
+            <!-- 下载按钮 -->
+            <!-- 注意：href 链接为你提供的 123云盘地址 -->
+            <a href="https://www.123684.com/s/RUrajv-l9dud" class="btn" target="_blank">立即下载 BrowserMe</a>
+        </div>
+
+        <!-- 底部提示（模拟微信内置浏览器下载提示） -->
+        <div class="download-tip" id="tip">
+            点击右上角 <strong>•••</strong> 选择 <strong>“在浏览器中打开”</strong> 以下载安装包
+        </div>
+    </div>
+
+    <script>
+        // 简单的交互：模拟在微信中打开时的提示
+        // 如果需要在微信中强制显示提示条，请取消注释以下代码：
+        /*
+        document.addEventListener('DOMContentLoaded', function() {
+            var tip = document.getElementById('tip');
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.indexOf('micromessenger') !== -1) {
+                tip.style.display = 'block'; // 如果是微信浏览器，显示提示
+            }
+        });
+        */
+    </script>
+</body>
+</html>
